@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+
+body { min-width: 320px; }
+
+#root {
+  min-height: 100vh;
+}
