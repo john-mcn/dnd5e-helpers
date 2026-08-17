@@ -1,6 +1,22 @@
+import { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
 export function AppLayout() {
+  const [theme, setTheme] = useState<"dark" | "light">(
+    () => {
+      const saved = localStorage.getItem("theme");
+
+      return saved === "light"
+        ? "light"
+        : "dark";
+    }
+  );
+  
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
   return (
     <div className="app-shell">
       <header className="app-header">
@@ -27,6 +43,15 @@ export function AppLayout() {
             >
               NPCs
             </NavLink>
+            <button
+              onClick={() => setTheme((current) => current === "dark" ? "light" : "dark")}
+              className="theme-button"
+            >
+              {theme === "dark"
+                ? <img src="/sun.svg" alt="Light" className="theme-icon"></img>
+                : <img src="/moon.svg" alt="Light" className="theme-icon"></img>
+              }
+            </button>
           </nav>
         </div>
       </header>

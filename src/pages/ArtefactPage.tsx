@@ -79,6 +79,7 @@ export function ArtefactPage() {
           />
         </div>
 
+        <br/>
         <button
           className="primary-button"
           onClick={handleRoll}
