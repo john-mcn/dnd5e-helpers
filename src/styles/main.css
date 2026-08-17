@@ -38,120 +38,31 @@
 
 /* Light Theme */
 [data-theme="light"] {
-  /* =====================================================
-     PAGE / SURFACES
-     ===================================================== */
-
-  /* Warm ivory with a very subtle blue undertone */
   --colour-bg: #f3f1ed;
-
-  /* Soft warm white */
   --colour-surface: #fbfaf7;
-
-  /* Pale blue-grey for raised areas */
   --colour-surface-raised: #e8edf4;
-
-
-  /* =====================================================
-     BORDERS
-     ===================================================== */
-
-  /* Warm grey-blue */
   --colour-border: #d1d4d8;
-
-  /* Stronger muted blue-grey */
   --colour-border-strong: #aab6c8;
-
-
-  /* =====================================================
-     TEXT
-     ===================================================== */
-
-  /* Deep blue-charcoal rather than pure black */
   --colour-ink: #202a3a;
-
-  /* Neutral/slightly cool grey */
   --colour-ink-muted: #697282;
-
-  /* Muted medium blue */
   --colour-ink-accent: #456184;
-
-
-  /* =====================================================
-     ACCENT
-     ===================================================== */
-
-  /* Dusty slate blue */
   --colour-accent: #4d6f9f;
-
-  /* Slightly brighter but still muted */
   --colour-accent-hover: #42628f;
-
-  /* Deeper blue for active/pressed */
   --colour-accent-active: #38557d;
-
-  /* White works cleanly against the blue */
   --colour-accent-ink: #ffffff;
-
-
-  /* =====================================================
-     HEADER
-     ===================================================== */
-
-  /* Warm blue-grey, not plain white */
   --colour-header: #e8e7e3;
-
-
-  /* =====================================================
-     INPUTS
-     ===================================================== */
-
   --colour-input-bg: #fcfbf8;
-
-  /* Warm grey with blue influence */
   --colour-input-border: #bdc3cc;
-
   --colour-input-focus: #4d6f9f;
-
-
-  /* =====================================================
-     NAVIGATION
-     ===================================================== */
-
-  /* Warm blue-grey hover */
   --colour-nav-hover: #e3e6ea;
-
-  /* More visible muted blue active state */
   --colour-nav-active: #d4deeb;
-
-
-  /* =====================================================
-     THEME BUTTON
-     ===================================================== */
-
-  /* Muted blue-grey */
   --colour-theme-bg: #dfe5ed;
-
   --colour-theme-border: #aeb9c9;
-
   --colour-theme-hover: #d2dbe7;
-
   --colour-theme-icon: #3b5475;
-
-
-  /* =====================================================
-     ERRORS
-     ===================================================== */
-
   --colour-danger-bg: #f6e9ea;
   --colour-danger-border: #d0a0a5;
   --colour-danger-ink: #833d48;
-
-
-  /* =====================================================
-     SHADOW
-     ===================================================== */
-
   --colour-shadow: rgba(45, 52, 63, 0.12);
 }
 
@@ -259,14 +170,13 @@ a {
   color: var(--colour-ink);
 }
 
-
 /* Theme button */
 .theme-button {
   width: 40px; height: 40px;
   flex-shrink: 0;
   display: inline-flex;
   align-items: center; justify-content: center;
-  padding: 0;
+  padding: 0; margin-left: 30px;
   border: 1px solid var(--colour-theme-border); border-radius: 50%;
   background: var(--colour-theme-bg); color: var(--colour-theme-icon);
   cursor: pointer;
@@ -298,6 +208,20 @@ a {
 .theme-button:focus-visible {
   outline: 2px solid var(--colour-accent);
   outline-offset: 3px;
+}
+
+.theme-icon {
+  width: 100%; max-width: 80%;
+  opacity: 0.55;
+  transition:
+    opacity 140ms ease,
+    transform 140ms ease;
+}
+.theme-button:hover .theme-icon { opacity: 0.9; }
+.theme-button:focus-visible .theme-icon { opacity: 0.9; }
+.theme-button:active .theme-icon {
+  opacity: 0.8;
+  transform: scale(0.92);
 }
 
 /* Page */

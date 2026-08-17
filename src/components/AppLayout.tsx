@@ -47,7 +47,10 @@ export function AppLayout() {
               onClick={() => setTheme((current) => current === "dark" ? "light" : "dark")}
               className="theme-button"
             >
-              {theme === "dark" ? "Light" : "Dark"}
+              {theme === "dark"
+                ? <img src="/sun.svg" alt="Light" className="theme-icon"></img>
+                : <img src="/moon.svg" alt="Light" className="theme-icon"></img>
+              }
             </button>
           </nav>
         </div>
