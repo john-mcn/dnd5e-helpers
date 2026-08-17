@@ -45,6 +45,7 @@ export function AppLayout() {
             </NavLink>
             <button
               onClick={() => setTheme((current) => current === "dark" ? "light" : "dark")}
+              className="theme-button"
             >
               {theme === "dark" ? "Light" : "Dark"}
             </button>

@@ -1,50 +1,162 @@
+/* =========================================================
+   THEME
+   ========================================================= */
+
 :root {
-  /* Dark theme */
-  --colour-bg: #101b3d;
-  --colour-surface: #172650;
-  --colour-surface-raised: #20315f;
-  --colour-border: #34477a;
-  --colour-ink: #f4f6ff;
-  --colour-ink-muted: #b9c3dd;
-  --colour-accent: #6688e8;
-  --colour-accent-hover: #7898f0;
+  /* Dark Theme */
+  --colour-bg: #050b1c;
+  --colour-surface: #0b1530;
+  --colour-surface-raised: #111f43;
+  --colour-border: #1d315d;
+  --colour-border-strong: #2f4d8c;
+  --colour-ink: #f3f6ff;
+  --colour-ink-muted: #9daac8;
+  --colour-ink-accent: #91adff;
+  --colour-accent: #557fe5;
+  --colour-accent-hover: #6790f2;
+  --colour-accent-active: #456fcf;
   --colour-accent-ink: #ffffff;
-  --colour-danger-bg: #542838;
-  --colour-danger-ink: #ffd5dd;
-  --colour-header: #0c1633;
-  --colour-input-bg: #101c3e;
-  --colour-input-border: #3a4d80;
-  --colour-nav-hover: #1e2e5a;
-  --colour-nav-active: #2a3d72;
-  --colour-shadow: rgba(3, 10, 30, 0.25);
+  --colour-header: #030815;
+  --colour-input-bg: #070f24;
+  --colour-input-border: #263d72;
+  --colour-input-focus: #6c91f0;
+  --colour-nav-hover: #102044;
+  --colour-nav-active: #172d5c;
+  --colour-theme-bg: #0d1a38;
+  --colour-theme-border: #2c4780;
+  --colour-theme-hover: #162a56;
+  --colour-theme-icon: #dce7ff;
+  --colour-danger-bg: #361722;
+  --colour-danger-border: #733245;
+  --colour-danger-ink: #ffd6de;
+  --colour-shadow: rgba(0, 0, 0, 0.42);
 
-  --font-heading: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
-  --font-body: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
-  --font-ui: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-heading: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  --font-body: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-ui: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-
-/* Light theme */
+/* Light Theme */
 [data-theme="light"] {
-  --colour-bg: #f7f7f9;
-  --colour-surface: #ffffff;
-  --colour-surface-raised: #eef0f5;
-  --colour-border: #d2d6e1;
-  --colour-ink: #18213a;
-  --colour-ink-muted: #596276;
-  --colour-accent: #405fae;
-  --colour-accent-hover: #344f98;
+  /* =====================================================
+     PAGE / SURFACES
+     ===================================================== */
+
+  /* Warm ivory with a very subtle blue undertone */
+  --colour-bg: #f3f1ed;
+
+  /* Soft warm white */
+  --colour-surface: #fbfaf7;
+
+  /* Pale blue-grey for raised areas */
+  --colour-surface-raised: #e8edf4;
+
+
+  /* =====================================================
+     BORDERS
+     ===================================================== */
+
+  /* Warm grey-blue */
+  --colour-border: #d1d4d8;
+
+  /* Stronger muted blue-grey */
+  --colour-border-strong: #aab6c8;
+
+
+  /* =====================================================
+     TEXT
+     ===================================================== */
+
+  /* Deep blue-charcoal rather than pure black */
+  --colour-ink: #202a3a;
+
+  /* Neutral/slightly cool grey */
+  --colour-ink-muted: #697282;
+
+  /* Muted medium blue */
+  --colour-ink-accent: #456184;
+
+
+  /* =====================================================
+     ACCENT
+     ===================================================== */
+
+  /* Dusty slate blue */
+  --colour-accent: #4d6f9f;
+
+  /* Slightly brighter but still muted */
+  --colour-accent-hover: #42628f;
+
+  /* Deeper blue for active/pressed */
+  --colour-accent-active: #38557d;
+
+  /* White works cleanly against the blue */
   --colour-accent-ink: #ffffff;
-  --colour-danger-bg: #f8e8ec;
-  --colour-danger-ink: #8f3045;
-  --colour-header: #ffffff;
-  --colour-input-bg: #ffffff;
-  --colour-input-border: #c7ccd8;
-  --colour-nav-hover: #eef0f5;
-  --colour-nav-active: #e3e7f0;
-  --colour-shadow: rgba(20, 30, 55, 0.10);
+
+
+  /* =====================================================
+     HEADER
+     ===================================================== */
+
+  /* Warm blue-grey, not plain white */
+  --colour-header: #e8e7e3;
+
+
+  /* =====================================================
+     INPUTS
+     ===================================================== */
+
+  --colour-input-bg: #fcfbf8;
+
+  /* Warm grey with blue influence */
+  --colour-input-border: #bdc3cc;
+
+  --colour-input-focus: #4d6f9f;
+
+
+  /* =====================================================
+     NAVIGATION
+     ===================================================== */
+
+  /* Warm blue-grey hover */
+  --colour-nav-hover: #e3e6ea;
+
+  /* More visible muted blue active state */
+  --colour-nav-active: #d4deeb;
+
+
+  /* =====================================================
+     THEME BUTTON
+     ===================================================== */
+
+  /* Muted blue-grey */
+  --colour-theme-bg: #dfe5ed;
+
+  --colour-theme-border: #aeb9c9;
+
+  --colour-theme-hover: #d2dbe7;
+
+  --colour-theme-icon: #3b5475;
+
+
+  /* =====================================================
+     ERRORS
+     ===================================================== */
+
+  --colour-danger-bg: #f6e9ea;
+  --colour-danger-border: #d0a0a5;
+  --colour-danger-ink: #833d48;
+
+
+  /* =====================================================
+     SHADOW
+     ===================================================== */
+
+  --colour-shadow: rgba(45, 52, 63, 0.12);
 }
 
+
+/* Global */
 * {
   box-sizing: border-box;
 }
@@ -52,11 +164,15 @@
 html {
   min-width: 320px;
   background: var(--colour-bg);
+
+  transition:
+    background-color 180ms ease;
 }
 
 body {
-  margin: 0;
   min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
   background: var(--colour-bg); color: var(--colour-ink);
   font-family: var(--font-ui);
   transition:
@@ -78,11 +194,16 @@ a {
   text-decoration: none;
 }
 
+
+/* App Shell */
 .app-shell {
   min-height: 100vh;
   background: var(--colour-bg);
+  transition:
+    background-color 180ms ease;
 }
 
+/* Header */
 .app-header {
   border-bottom: 1px solid var(--colour-border);
   background: var(--colour-header);
@@ -97,15 +218,23 @@ a {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
 }
 
+/* Brand */
 .brand {
+  margin-right: auto;
+  font-family: var(--font-heading);
   font-weight: 700;
   white-space: nowrap;
+  transition: color 120ms ease;
 }
 
+.brand:hover {
+  color: var(--colour-ink-accent);
+}
+
+/* Nav */
 .main-nav {
   display: flex;
   gap: 4px;
@@ -130,42 +259,51 @@ a {
   color: var(--colour-ink);
 }
 
+
+/* Theme button */
 .theme-button {
   width: 40px; height: 40px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center; justify-content: center;
   padding: 0;
-  border: 1px solid var(--colour-border); border-radius: 10px;
-  background: var(--colour-surface); color: var(--colour-ink);
+  border: 1px solid var(--colour-theme-border); border-radius: 50%;
+  background: var(--colour-theme-bg); color: var(--colour-theme-icon);
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 2px 7px var(--colour-shadow);
   transition:
-    background-color 120ms ease,
-    border-color 120ms ease,
-    transform 120ms ease;
+    background-color 140ms ease,
+    border-color 140ms ease,
+    color 140ms ease,
+    transform 120ms ease,
+    box-shadow 140ms ease;
 }
 
 .theme-button:hover {
-  background: var(--colour-surface-raised);
+  background: var(--colour-theme-hover);
   border-color: var(--colour-accent);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 3px 10px var(--colour-shadow);
 }
 
 .theme-button:active {
-  transform: scale(0.94);
+  transform: scale(0.91);
 }
 
 .theme-button:focus-visible {
-  outline: 3px solid var(--colour-accent);
-  outline-offset: 2px;
+  outline: 2px solid var(--colour-accent);
+  outline-offset: 3px;
 }
 
+/* Page */
 .page-container {
   width: min(100% - 24px, 900px);
-  margin: 0 auto;
-  padding: 24px 0 40px;
+  margin: 0 auto; padding: 24px 0 40px;
 }
 
 .page-intro {
@@ -174,8 +312,7 @@ a {
 
 .page-intro h1 {
   margin: 0 0 8px;
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
+  font-family: var(--font-heading); font-size: 1.6rem;
 }
 
 .page-intro p {
@@ -184,6 +321,7 @@ a {
   line-height: 1.5;
 }
 
+/* Home/gen cards */
 .generator-grid {
   display: grid;
   gap: 12px;
@@ -194,16 +332,20 @@ a {
   padding: 18px;
   border: 1px solid var(--colour-border); border-radius: 14px;
   background: var(--colour-surface);
-  box-shadow: 0 4px 16px var(--colour-shadow);
+  box-shadow:
+    0 5px 18px var(--colour-shadow);
   transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    transform 120ms ease;
+    background-color 160ms ease,
+    border-color 160ms ease,
+    transform 120ms ease,
+    box-shadow 160ms ease;
 }
 
 .generator-card:hover {
   background: var(--colour-surface-raised);
-  border-color: var(--colour-accent);
+  border-color: var(--colour-border-strong);
+  box-shadow:
+    0 7px 22px var(--colour-shadow);
 }
 
 .generator-card:active {
@@ -228,24 +370,26 @@ a {
 }
 
 .card-action {
-  color: var(--colour-accent);
+  color: var(--colour-ink-accent);
   font-weight: 700;
 }
 
+/* Gen/result & placeholder */
 .generator-panel,
 .result-panel,
 .placeholder-card {
-  border: 1px solid var(--colour-border);
-  border-radius: 14px;
+  border: 1px solid var(--colour-border); border-radius: 14px;
   background: var(--colour-surface);
-  box-shadow: 0 4px 16px var(--colour-shadow);
+  box-shadow:
+    0 5px 18px var(--colour-shadow);
 }
 
 .generator-panel {
   padding: 16px;
 }
 
-.artifact-input-grid {
+/* Artefact */
+.artefact-input-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
@@ -259,8 +403,8 @@ a {
 }
 
 .number-input span {
-  font-size: 0.9rem;
   color: var(--colour-ink-muted);
+  font-size: 0.9rem;
 }
 
 .number-input input {
@@ -268,12 +412,12 @@ a {
   min-height: 46px;
   padding: 10px 12px;
   border: 1px solid var(--colour-input-border); border-radius: 9px;
-  background: var(--colour-input-bg);
-  color: var(--colour-ink);
+  background: var(--colour-input-bg); color: var(--colour-ink);
   font-size: 16px;
   transition:
+    background-color 160ms ease,
     border-color 120ms ease,
-    background-color 180ms ease;
+    box-shadow 120ms ease;
 }
 
 .number-input input:hover {
@@ -282,33 +426,38 @@ a {
 
 .number-input input:focus {
   outline: none;
-  border-color: var(--colour-accent);
-  box-shadow: 0 0 0 3px color-mix(
-    in srgb,
-    var(--colour-accent) 25%,
-    transparent
-  );
+  border-color: var(--colour-input-focus);
+  box-shadow:
+    0 0 0 3px color-mix(
+      in srgb,
+      var(--colour-input-focus) 22%,
+      transparent
+    );
 }
 
+/* Buttons */
 .primary-button {
   width: 100%;
   min-height: 48px;
   border: 0; border-radius: 10px;
-  background: var(--colour-accent);
-  color: var(--colour-accent-ink);
+  background: var(--colour-accent); color: var(--colour-accent-ink);
   cursor: pointer;
   font-weight: 700;
   transition:
     background-color 120ms ease,
     transform 120ms ease,
-    opacity 120ms ease;
+    opacity 120ms ease,
+    box-shadow 120ms ease;
 }
 
 .primary-button:hover {
   background: var(--colour-accent-hover);
+  box-shadow:
+    0 4px 12px var(--colour-shadow);
 }
 
 .primary-button:active {
+  background: var(--colour-accent-active);
   transform: scale(0.985);
 }
 
@@ -317,6 +466,7 @@ a {
   cursor: not-allowed;
 }
 
+/* Results */
 .result-panel {
   margin-top: 16px;
   padding: 16px;
@@ -329,6 +479,7 @@ a {
 .result-section h2 {
   margin: 0 0 8px;
   font-family: var(--font-heading); font-size: 1.05rem;
+  color: var(--colour-ink-accent);
 }
 
 .result-section ul {
@@ -341,24 +492,26 @@ a {
   line-height: 1.5;
 }
 
+/* Errors */
 .error-message {
-  margin-top: 12px;
-  padding: 12px;
-  border: 1px solid var(--colour-danger-ink); border-radius: 10px;
+  margin-top: 12px; padding: 12px;
+  border: 1px solid var(--colour-danger-border); border-radius: 10px;
   background: var(--colour-danger-bg);
   color: var(--colour-danger-ink);
 }
 
+/* Placeholder */
 .placeholder-card {
   padding: 20px;
 }
 
+/* Responsive */
 @media (min-width: 640px) {
   .generator-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .artifact-input-grid {
+  .artefact-input-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
