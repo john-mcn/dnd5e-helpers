@@ -451,37 +451,35 @@ a {
   gap: 12px;
 }
 
-.npc-card {
+.card {
   min-width: 0;
   padding: 16px;
   border: 1px solid var(--colour-border);
   border-radius: 12px;
   background: var(--colour-surface);
   box-shadow: 0 5px 18px var(--colour-shadow);
-
   overflow-wrap: anywhere;
-
   transition:
     background-color 160ms ease,
     border-color 160ms ease,
     box-shadow 160ms ease;
 }
 
-.npc-card:hover {
+.card:hover {
   background: var(--colour-surface-raised);
   border-color: var(--colour-border-strong);
   box-shadow: 0 7px 22px var(--colour-shadow);
 }
 
-.npc-card h2 {
-  margin: 0 0 12px;
+.card h2 {
+  margin: 0 0 5px;
   font-family: var(--font-heading-modern);
   font-size: 1.05rem;
   color: var(--colour-ink-accent);
 }
 
-.npc-card p {
-  margin: 4px 0;
+.card p {
+  margin: 0;
   line-height: 1.5;
 }
 
