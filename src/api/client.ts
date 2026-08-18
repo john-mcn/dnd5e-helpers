@@ -16,7 +16,21 @@ export type ArtefactResponse = {
   majorDetrimental: ArtefactData[]
 };
 
-export type Npc = {};
+export type NpcOptions = {
+  count: number,
+  raceSrc: string,
+  likeCount: number,
+  dislikeCount: number,
+  quirkCount: number
+};
+export type Npc = {
+  race: string,
+  maturity: string,
+  job: string,
+  likes: string[],
+  dislikes: string[],
+  quirks: string[]
+};
 
 async function request<T>(path: string, params?: Record<string, string | number>): Promise<T> {
   const url = new URL(`${API_BASE_URL}${path}`);
@@ -36,14 +50,10 @@ async function request<T>(path: string, params?: Record<string, string | number>
   return response.json() as Promise<T>;
 }
 
-export function generateArtefact(
-  options: ArtefactOptions
-): Promise<ArtefactResponse> {
+export function generateArtefact(options: ArtefactOptions): Promise<ArtefactResponse> {
   return request<ArtefactResponse>("artifact", options);
 }
 
-export function generateNpcs(
-  count = 1
-): Promise<Npc[]> {
-  return request<Npc[]>("npc", { count });
+export function generateNpcs(options: NpcOptions): Promise<Npc[]> {
+  return request<Npc[]>("npc", options);
 }

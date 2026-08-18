@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { ArtefactData, ArtefactOptions, ArtefactResponse } from '../api/client';
 import { generateArtefact } from "../api/client";
+import { NumberInput } from "../components/NumberInput";
 
 const DEFAULT_OPTIONS: ArtefactOptions = {
   minorBeneficial: 2,
@@ -45,37 +46,29 @@ export function ArtefactPage() {
       </div>
 
       <div className="generator-panel">
-        <div className="Artefact-input-grid">
+        <div className="input-grid">
           <NumberInput
             label="Minor Beneficial"
             value={options.minorBeneficial}
-            onChange={(value) =>
-              updateOption("minorBeneficial", value)
-            }
+            onChange={(value) => updateOption("minorBeneficial", value) }
           />
 
           <NumberInput
             label="Major Beneficial"
             value={options.majorBeneficial}
-            onChange={(value) =>
-              updateOption("majorBeneficial", value)
-            }
+            onChange={(value) => updateOption("majorBeneficial", value) }
           />
 
           <NumberInput
             label="Minor Detrimental"
             value={options.minorDetrimental}
-            onChange={(value) =>
-              updateOption("minorDetrimental", value)
-            }
+            onChange={(value) => updateOption("minorDetrimental", value) }
           />
 
           <NumberInput
             label="Major Detrimental"
             value={options.majorDetrimental}
-            onChange={(value) =>
-              updateOption("majorDetrimental", value)
-            }
+            onChange={(value) => updateOption("majorDetrimental", value) }
           />
         </div>
 
@@ -99,31 +92,6 @@ export function ArtefactPage() {
         <ArtefactResult result={result} />
       )}
     </section>
-  );
-}
-
-function NumberInput({
-  label,
-  value,
-  onChange,
-}: {
-  label: string;
-  value: number;
-  onChange: (value: number) => void;
-}) {
-  return (
-    <label className="number-input">
-      <span>{label}</span>
-
-      <input
-        type="number"
-        min="0"
-        value={value}
-        onChange={(event) =>
-          onChange(Number(event.target.value))
-        }
-      />
-    </label>
   );
 }
 
