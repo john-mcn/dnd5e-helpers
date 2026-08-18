@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { generateNpcs, type Npc, type NpcOptions } from "../api/client";
+import { fetchNpcJobs, fetchNpcQuirks, fetchNpcRaces, fetchNpcWorldFacets, generateNpcs, type Npc, type NpcOptions } from "../api/client";
 import { NumberInput } from "../components/NumberInput";
 import { CheckboxInput } from "../components/CheckboxInput";
 
@@ -115,6 +115,8 @@ export function NpcPage() {
     {result && (
       <NpcResult result={result} />
     )}
+
+    <NpcReferenceData />
     </section>
   );
 }
@@ -124,7 +126,7 @@ function NpcResult({ result }: { result: Npc[] }) {
     <div className="result-panel">
       <div className="npc-grid">
         {result.map((npc, index) => (
-          <article className="npc-card" key={index}>
+          <article className="card" key={index}>
             <h2>NPC {index + 1}</h2>
 
             <p><strong>Race:</strong> {npc.race}</p>
@@ -137,5 +139,91 @@ function NpcResult({ result }: { result: Npc[] }) {
         ))}
       </div>
     </div>
+  );
+}
+
+function NpcReferenceData() {
+  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const [races, setRaces] = useState<string[]>([]);
+  const [jobs, setJobs] = useState<string[]>([]);
+  const [worldFacets, setWorldFacets] = useState<string[]>([]);
+  const [quirks, setQuirks] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (!open || races.length > 0) { return; }
+
+    async function loadData() {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const [ raceData, jobData, worldFacetData, quirkData ] = await Promise.all([
+          fetchNpcRaces(), fetchNpcJobs(), fetchNpcWorldFacets(), fetchNpcQuirks(),
+        ]);
+        setRaces(raceData.races.common.concat(raceData.races.exotic).concat(raceData.races.monstrous));
+        setJobs(jobData.jobs); setWorldFacets(worldFacetData.worldFacets); setQuirks(quirkData.quirks);
+      } catch (err) {
+        console.error(err);
+        setError("Failed to load NPC reference data.");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadData();
+  }, [open, races.length]);
+
+  return (
+    <section className="reference">
+      <button
+        type="button"
+        className="reference-toggle"
+        onClick={() => setOpen((current) => !current)}
+        aria-expanded={open}
+      >
+        <span>NPC Reference Data</span>
+        <span className="reference-chevron">
+          {open ? "Hide" : "Show"}
+        </span>
+      </button>
+
+      {open && (
+        <div className="reference-content">
+          {loading && (
+            <p className="reference-status">Loading reference data...</p>
+          )}
+
+          {error && (
+            <p className="reference-error">{error}</p>
+          )}
+
+          {!loading && !error && (
+            <div className="reference-grid">
+              <NpcDataset title="Races" values={races} />
+              <NpcDataset title="Jobs" values={jobs} />
+              <NpcDataset title="World Facets" values={worldFacets} />
+              <NpcDataset title="Quirks" values={quirks} />
+            </div>
+          )}
+        </div>
+      )}
+    </section>
+  );
+}
+
+function NpcDataset({ title, values }: { title: string, values: string[] }) {
+  return (
+    <details className="dataset">
+      <summary className="clickable">
+        {title} <span>{values.length}</span>
+      </summary>
+
+      <div className="dataset-list">
+        {values.join(", ")}
+      </div>
+    </details>
   );
 }

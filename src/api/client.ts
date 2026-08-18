@@ -32,6 +32,16 @@ export type Npc = {
   quirks: string[]
 };
 
+export type NpcRace = {
+  common: string[],
+  exotic: string[],
+  monstrous: string[]
+};
+export type NpcRaceResponse = { races: NpcRace }
+export type JobResponse = { jobs: string[] }
+export type WorldFacetResponse = { worldFacets: string[] }
+export type QuirkResponse = { quirks: string[] }
+
 async function request<T>(path: string, params?: Record<string, string | number>): Promise<T> {
   const url = new URL(`${API_BASE_URL}${path}`);
 
@@ -56,4 +66,16 @@ export function generateArtefact(options: ArtefactOptions): Promise<ArtefactResp
 
 export function generateNpcs(options: NpcOptions): Promise<Npc[]> {
   return request<Npc[]>("npc", options);
+}
+export function fetchNpcRaces(): Promise<NpcRaceResponse> {
+  return request<NpcRaceResponse>("npc/races");
+}
+export function fetchNpcJobs(): Promise<JobResponse> {
+  return request<JobResponse>("npc/jobs");
+}
+export function fetchNpcWorldFacets(): Promise<WorldFacetResponse> {
+  return request<WorldFacetResponse>("npc/world-facets");
+}
+export function fetchNpcQuirks(): Promise<QuirkResponse> {
+  return request<QuirkResponse>("npc/quirks");
 }
